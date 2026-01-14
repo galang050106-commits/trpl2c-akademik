@@ -1,7 +1,13 @@
-<?php
-$koneksi = mysqli_connect("localhost", "root", "", "db_akademik");
 
-if (!$koneksi) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-}
+<?php 
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $db = "db_akademik";
+
+    $koneksi = new mysqli($host,$user,$password,$db);
+
+    if($koneksi->connect_error){
+        echo "Koneksi Gagal";
+    }
 ?>
